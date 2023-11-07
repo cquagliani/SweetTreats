@@ -7,6 +7,43 @@
 
 import SwiftUI
 
+struct URLImage: View {
+    let urlString: String
+    
+    @State var data: Data?
+    
+    var body: some View {
+        if let data = data, let previewImage = UIImage(data: data) {
+            Image(uiImage: previewImage)
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .frame(width: 80, height: 80)
+                .background(Color.gray)
+        } else {
+            Image(systemName: "photo.artframe")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 100, height: 70)
+                .background(Color.gray)
+                .onAppear {
+                    fetchImages()
+                }
+        }
+    }
+    
+    private func fetchImages() {
+        guard let url = URL(string: urlString) else {
+            return
+        }
+        
+        let task = URLSession.shared.dataTask(with: url) { data, _, _ in
+            self.data = data
+        }
+        
+        task.resume()
+    }
+}
+
 struct Response: Codable {
     let meals: [DessertPreview]
 }
@@ -55,9 +92,7 @@ struct DessertFeed: View {
             List {
                 ForEach(viewModel.dessertPreviews, id: \.self) { dessertPreview in
                     HStack {
-                        Image("")
-                            .frame(width: 100, height: 70)
-                            .background(Color.gray)
+                        URLImage(urlString: dessertPreview.strMealThumb)
                         Text(dessertPreview.strMeal)
                             .bold()
                     }
