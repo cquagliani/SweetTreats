@@ -9,7 +9,13 @@ import SwiftUI
 
 struct DessertCard: View {
     var body: some View {
-        Text("Hello, world")
+        Text("Hello word")
+//        HStack {
+//            URLImage(urlString: dessertPreview.strMealThumb)
+//            Text(dessertPreview.strMeal)
+//                .bold()
+//        }
+//        .padding(5)
     }
 }
 
