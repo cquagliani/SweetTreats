@@ -7,6 +7,10 @@
 
 import SwiftUI
 
+struct Response: Codable {
+    let meals: [DessertPreview]
+}
+
 struct DessertPreview: Hashable, Codable {
     let strMeal: String
     let strMealThumb: String
@@ -29,9 +33,9 @@ class ViewModel: ObservableObject {
             
             // Convert to JSON
             do {
-                let dessertPreviews = try JSONDecoder().decode([DessertPreview].self, from: data)
+                let response = try JSONDecoder().decode(Response.self, from: data)
                 DispatchQueue.main.async {
-                    self?.dessertPreviews = dessertPreviews
+                    self?.dessertPreviews = response.meals
                 }
             }
             catch {
@@ -52,7 +56,7 @@ struct DessertFeed: View {
                 ForEach(viewModel.dessertPreviews, id: \.self) { dessertPreview in
                     HStack {
                         Image("")
-                            .frame(width: 130, height: 70)
+                            .frame(width: 100, height: 70)
                             .background(Color.gray)
                         Text(dessertPreview.strMeal)
                             .bold()
