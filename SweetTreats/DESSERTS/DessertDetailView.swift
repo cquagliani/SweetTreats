@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct DessertDetailView: View {
+    @ObservedObject var data = Details()
     @State private var selectedSegment = 0
     let DessertDetailView: Dessert
 
@@ -51,17 +52,23 @@ struct DessertDetailView: View {
                 .pickerStyle(SegmentedPickerStyle())
                 .padding()
 
-                if selectedSegment == 0 {
-                    Text("Display Instructions here")
-                        .font(.body)
+                ScrollView {
+                    if selectedSegment == 0 {
+                        ForEach(data.dessertDetails, id:\.idMeal) { dessert in
+                            Text(dessert.strInstructions)
+                        }
                         .padding()
-                } else {
-                    Text("Display Ingredients here")
-                        .font(.body)
-                        .padding()
-                }
+                        
+                    } else {
+                        Text("Ingredients go here.")
+                    }
 
-                Spacer()
+                    Spacer()
+                    .onAppear {
+                        data.fetch(idMeal: DessertDetailView.idMeal)
+                    }
+                }
+              
             }
         }
 }

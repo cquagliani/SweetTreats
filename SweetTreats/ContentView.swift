@@ -15,7 +15,7 @@ struct ContentView: View {
                 .tabItem {
                     Label("Feed", systemImage: "fork.knife")
                 }
-            RecipeView()
+            StarredRecipesView()
                 .tag(1)
                 .tabItem {
                     Label("Recipes", systemImage: "book")

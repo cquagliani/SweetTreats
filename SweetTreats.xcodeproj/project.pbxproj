@@ -12,11 +12,11 @@
 		213DA4772AF9DC3600C2317D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 213DA4762AF9DC3600C2317D /* Assets.xcassets */; };
 		213DA47A2AF9DC3600C2317D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 213DA4792AF9DC3600C2317D /* Preview Assets.xcassets */; };
 		213DA4812AF9DE1E00C2317D /* AllDessertsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213DA4802AF9DE1E00C2317D /* AllDessertsView.swift */; };
-		213DA4832AF9DEA500C2317D /* RecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213DA4822AF9DEA500C2317D /* RecipeView.swift */; };
 		213DA4852AF9E0C600C2317D /* ShoppingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213DA4842AF9E0C600C2317D /* ShoppingView.swift */; };
 		213DA4882AF9EED700C2317D /* DessertCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213DA4872AF9EED700C2317D /* DessertCard.swift */; };
 		213DA48F2AFAE3EF00C2317D /* DessertModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213DA48E2AFAE3EF00C2317D /* DessertModel.swift */; };
 		213DA4912AFAE95600C2317D /* DessertDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213DA4902AFAE95600C2317D /* DessertDetailView.swift */; };
+		213DA4932AFAF71B00C2317D /* StarredRecipesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213DA4922AFAF71B00C2317D /* StarredRecipesView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,11 +26,11 @@
 		213DA4762AF9DC3600C2317D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		213DA4792AF9DC3600C2317D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		213DA4802AF9DE1E00C2317D /* AllDessertsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllDessertsView.swift; sourceTree = "<group>"; };
-		213DA4822AF9DEA500C2317D /* RecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeView.swift; sourceTree = "<group>"; };
 		213DA4842AF9E0C600C2317D /* ShoppingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingView.swift; sourceTree = "<group>"; };
 		213DA4872AF9EED700C2317D /* DessertCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DessertCard.swift; sourceTree = "<group>"; };
 		213DA48E2AFAE3EF00C2317D /* DessertModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DessertModel.swift; sourceTree = "<group>"; };
 		213DA4902AFAE95600C2317D /* DessertDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DessertDetailView.swift; sourceTree = "<group>"; };
+		213DA4922AFAF71B00C2317D /* StarredRecipesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarredRecipesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,11 +63,11 @@
 		213DA4712AF9DC3500C2317D /* SweetTreats */ = {
 			isa = PBXGroup;
 			children = (
-				213DA48B2AFA006600C2317D /* RECIPES */,
 				213DA4862AF9EE8D00C2317D /* DESSERTS */,
 				213DA4722AF9DC3500C2317D /* SweetTreatsApp.swift */,
 				213DA4742AF9DC3500C2317D /* ContentView.swift */,
 				213DA4842AF9E0C600C2317D /* ShoppingView.swift */,
+				213DA4922AFAF71B00C2317D /* StarredRecipesView.swift */,
 				213DA4762AF9DC3600C2317D /* Assets.xcassets */,
 				213DA4782AF9DC3600C2317D /* Preview Content */,
 			);
@@ -91,14 +91,6 @@
 				213DA4902AFAE95600C2317D /* DessertDetailView.swift */,
 			);
 			path = DESSERTS;
-			sourceTree = "<group>";
-		};
-		213DA48B2AFA006600C2317D /* RECIPES */ = {
-			isa = PBXGroup;
-			children = (
-				213DA4822AF9DEA500C2317D /* RecipeView.swift */,
-			);
-			path = RECIPES;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,7 +169,7 @@
 				213DA4752AF9DC3500C2317D /* ContentView.swift in Sources */,
 				213DA4882AF9EED700C2317D /* DessertCard.swift in Sources */,
 				213DA4812AF9DE1E00C2317D /* AllDessertsView.swift in Sources */,
-				213DA4832AF9DEA500C2317D /* RecipeView.swift in Sources */,
+				213DA4932AFAF71B00C2317D /* StarredRecipesView.swift in Sources */,
 				213DA4732AF9DC3500C2317D /* SweetTreatsApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

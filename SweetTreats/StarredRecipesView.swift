@@ -1,13 +1,13 @@
 //
-//  RecipeView.swift
+//  StarredRecipesView.swift
 //  SweetTreats
 //
-//  Created by Chris Quagliani on 11/6/23.
+//  Created by Chris Quagliani on 11/7/23.
 //
 
 import SwiftUI
 
-struct RecipeView: View {
+struct StarredRecipesView: View {
     var body: some View {
         NavigationStack {
 //            List {
@@ -36,5 +36,5 @@ struct RecipeView: View {
 }
 
 #Preview {
-    RecipeView()
+    StarredRecipesView()
 }
