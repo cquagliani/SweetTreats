@@ -8,19 +8,17 @@
 import SwiftUI
 
 struct DessertCard: View {
+    let dessert: Dessert
+    
     var body: some View {
-        Text("Hello word")
-//        HStack {
-//            URLImage(urlString: dessertPreview.strMealThumb)
-//            Text(dessertPreview.strMeal)
-//                .bold()
-//        }
-//        .padding(5)
+        HStack(alignment: .top) {
+            URLImage(urlString: dessert.strMealThumb, width: 100, height: 100)
+                .clipShape(RoundedRectangle(cornerRadius: 16))
+            Text(dessert.strMeal)
+                .bold()
+                .font(.system(size: 18))
+                .padding(5)
+            }
+            .padding(5)
+        }
     }
-}
-
-struct DessertCard_Previews: PreviewProvider {
-    static var previews: some View {
-        DessertCard()
-    }
-}

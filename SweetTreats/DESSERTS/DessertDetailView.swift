@@ -19,7 +19,7 @@ struct DessertDetailView: View {
         
         VStack {
             ForEach(data.dessertDetails, id:\.idMeal) { dessert in
-                URLImage(urlString: dessert.strMealThumb)
+                URLImage(urlString: dessert.strMealThumb, width: 400, height: 125)
                     .ignoresSafeArea()
             }
             

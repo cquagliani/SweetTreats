@@ -51,6 +51,8 @@ struct DessertDetail: Hashable, Codable {
 
 struct URLImage: View {
     let urlString: String
+    let width: CGFloat
+    let height: CGFloat
     
     @State var data: Data?
     
@@ -60,7 +62,7 @@ struct URLImage: View {
                 .resizable()
                 .scaledToFill()
                 .aspectRatio(contentMode: .fill)
-                .frame(width: 400, height: 125)
+                .frame(width: width, height: height)
         } else {
             // If no image exists, display a placeholder system image
             Image(systemName: "photo.artframe")

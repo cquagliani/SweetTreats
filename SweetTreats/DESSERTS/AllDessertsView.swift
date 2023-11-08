@@ -12,8 +12,10 @@ struct AllDessertsView: View {
     
     var body: some View {
         NavigationStack {
-            List(viewModel.Desserts, id: \.self) {dessert in
-                NavigationLink(dessert.strMeal, destination: DessertDetailView(OriginalDessert: dessert))
+            List(viewModel.Desserts, id: \.idMeal) { dessert in
+                NavigationLink(destination: DessertDetailView(OriginalDessert: dessert)) {
+                    DessertCard(dessert: dessert)
+                }
             }
             .padding(.top, 20)
             .listStyle(.plain)
