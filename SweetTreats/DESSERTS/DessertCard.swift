@@ -9,12 +9,14 @@ import SwiftUI
 
 struct DessertCard: View {
     let dessert: Dessert
+    let corner = 10.0 // Controls corner radius of all elements in the ZStack
+    let shadow = 10.0 // Controls shadow radius of all elements in the ZStack
     
     var body: some View {
         ZStack {
             URLImage(urlString: dessert.strMealThumb, width: 350, height: 100)
-                .cornerRadius(25)
-                .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
+                .cornerRadius(corner)
+                .shadow(radius: shadow)
                 .clipped()
             
             // Dark overlay to improve title readability
@@ -22,8 +24,8 @@ struct DessertCard: View {
                 .frame(width: 350, height: 100)
                 .foregroundColor(.black)
                 .opacity(0.3)
-                .cornerRadius(25)
-                .shadow(radius: 10)
+                .cornerRadius(corner)
+                .shadow(radius: shadow)
             
             HStack {
                 Text(dessert.strMeal)
@@ -36,6 +38,6 @@ struct DessertCard: View {
                 Spacer() // Aligns text to the left
             }
         }
-        .cornerRadius(25) // Must match the image's corner radius
+        .cornerRadius(corner)
     }
 }
