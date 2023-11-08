@@ -16,6 +16,9 @@ struct AllDessertsView: View {
                 NavigationLink(destination: DessertDetailView(originalDessert: dessert)) {
                     DessertCard(dessert: dessert)
                 }
+                .listRowBackground(Color.clear)
+                .listRowSeparator(.hidden)
+                .padding(.bottom, -10)
             }
             .padding(.top, 15)
             .listStyle(.plain)
