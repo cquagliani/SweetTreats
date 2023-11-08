@@ -7,13 +7,13 @@
 
 import SwiftUI
 
-struct AllDessertsList: View {
+struct AllDessertsView: View {
     @StateObject var viewModel = ViewModel()
     
     var body: some View {
         NavigationStack {
             List(viewModel.Desserts, id: \.self) {dessert in
-                NavigationLink(dessert.strMeal, destination: DessertDetailView(DessertDetailView: dessert))
+                NavigationLink(dessert.strMeal, destination: DessertDetailView(OriginalDessert: dessert))
             }
             .padding(.top, 20)
             .listStyle(.plain)
@@ -27,6 +27,6 @@ struct AllDessertsList: View {
 
 struct AllDessertsList_Previews: PreviewProvider {
     static var previews: some View {
-        AllDessertsList()
+        AllDessertsView()
     }
 }

@@ -8,6 +8,47 @@
 import Foundation
 import SwiftUI
 
+struct Response: Codable {
+    let meals: [Dessert]
+}
+
+struct Dessert: Hashable, Codable {
+    let strMeal: String
+    let strMealThumb: String
+    let idMeal: String
+}
+
+struct DetailResponse: Codable {
+    let meals: [DessertDetail]
+}
+
+struct DessertDetail: Hashable, Codable {
+    let strMeal: String
+    let strMealThumb: String
+    let idMeal: String
+    let strInstructions: String
+    let strIngredient1: String
+    let strIngredient2: String
+    let strIngredient3: String
+    let strIngredient4: String
+    let strIngredient5: String
+    let strIngredient6: String
+    let strIngredient7: String
+    let strIngredient8: String
+    let strIngredient9: String
+    let strIngredient10: String
+    let strMeasure1: String
+    let strMeasure2: String
+    let strMeasure3: String
+    let strMeasure4: String
+    let strMeasure5: String
+    let strMeasure6: String
+    let strMeasure7: String
+    let strMeasure8: String
+    let strMeasure9: String
+    let strMeasure10: String
+}
+
 struct URLImage: View {
     let urlString: String
     
@@ -19,7 +60,7 @@ struct URLImage: View {
                 .resizable()
                 .scaledToFill()
                 .aspectRatio(contentMode: .fill)
-                .frame(width: 500, height: 300)
+                .frame(width: 400, height: 125)
         } else {
             // If no image exists, display a placeholder system image
             Image(systemName: "photo.artframe")
@@ -75,16 +116,6 @@ class ViewModel: ObservableObject {
     }
 }
 
-struct Response: Codable {
-    let meals: [Dessert]
-}
-
-struct Dessert: Hashable, Codable {
-    let strMeal: String
-    let strMealThumb: String
-    let idMeal: String
-}
-
 class Details: ObservableObject {
     @Published var dessertDetails: [DessertDetail] = []
     
@@ -113,35 +144,4 @@ class Details: ObservableObject {
         
         task.resume()
     }
-}
-
-struct DetailResponse: Codable {
-    let meals: [DessertDetail]
-}
-
-struct DessertDetail: Hashable, Codable {
-    let strMeal: String
-    let strMealThumb: String
-    let idMeal: String
-    let strInstructions: String
-    let strIngredient1: String
-    let strIngredient2: String
-    let strIngredient3: String
-    let strIngredient4: String
-    let strIngredient5: String
-    let strIngredient6: String
-    let strIngredient7: String
-    let strIngredient8: String
-    let strIngredient9: String
-    let strIngredient10: String
-    let strMeasure1: String
-    let strMeasure2: String
-    let strMeasure3: String
-    let strMeasure4: String
-    let strMeasure5: String
-    let strMeasure6: String
-    let strMeasure7: String
-    let strMeasure8: String
-    let strMeasure9: String
-    let strMeasure10: String
 }

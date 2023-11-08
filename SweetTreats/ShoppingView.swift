@@ -24,13 +24,9 @@ struct ShoppingView: View {
                 Label("Your shopping list is empty", systemImage: "list.bullet.rectangle.portrait")
             }, description: {
                 Text("Add ingredients to your shopping list directly from any recipe.")
-                    .padding(.top, 10)
+                    .padding(.top, 15)
                     .padding(.horizontal, 15)
-            }, actions: {
-                Button(action: {}) {
-                    Text("Browse recipes")
-                }
-            })
+            }, actions: {})
         }
     }
 }

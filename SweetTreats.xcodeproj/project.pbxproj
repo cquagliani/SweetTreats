@@ -17,6 +17,7 @@
 		213DA48F2AFAE3EF00C2317D /* DessertModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213DA48E2AFAE3EF00C2317D /* DessertModel.swift */; };
 		213DA4912AFAE95600C2317D /* DessertDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213DA4902AFAE95600C2317D /* DessertDetailView.swift */; };
 		213DA4932AFAF71B00C2317D /* StarredRecipesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213DA4922AFAF71B00C2317D /* StarredRecipesView.swift */; };
+		213DA4952AFB2A0F00C2317D /* StarIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213DA4942AFB2A0F00C2317D /* StarIcon.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		213DA48E2AFAE3EF00C2317D /* DessertModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DessertModel.swift; sourceTree = "<group>"; };
 		213DA4902AFAE95600C2317D /* DessertDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DessertDetailView.swift; sourceTree = "<group>"; };
 		213DA4922AFAF71B00C2317D /* StarredRecipesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarredRecipesView.swift; sourceTree = "<group>"; };
+		213DA4942AFB2A0F00C2317D /* StarIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarIcon.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 				213DA4872AF9EED700C2317D /* DessertCard.swift */,
 				213DA48E2AFAE3EF00C2317D /* DessertModel.swift */,
 				213DA4902AFAE95600C2317D /* DessertDetailView.swift */,
+				213DA4942AFB2A0F00C2317D /* StarIcon.swift */,
 			);
 			path = DESSERTS;
 			sourceTree = "<group>";
@@ -169,6 +172,7 @@
 				213DA4752AF9DC3500C2317D /* ContentView.swift in Sources */,
 				213DA4882AF9EED700C2317D /* DessertCard.swift in Sources */,
 				213DA4812AF9DE1E00C2317D /* AllDessertsView.swift in Sources */,
+				213DA4952AFB2A0F00C2317D /* StarIcon.swift in Sources */,
 				213DA4932AFAF71B00C2317D /* StarredRecipesView.swift in Sources */,
 				213DA4732AF9DC3500C2317D /* SweetTreatsApp.swift in Sources */,
 			);

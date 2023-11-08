@@ -26,11 +26,7 @@ struct StarredRecipesView: View {
                 Text("Starred recipes will appear here.")
                     .padding(.top, 10)
                     .padding(.horizontal, 15)
-            }, actions: {
-                Button(action: {}) {
-                    Text("Browse new recipes")
-                }
-            })
+            }, actions: {})
         }
     }
 }
