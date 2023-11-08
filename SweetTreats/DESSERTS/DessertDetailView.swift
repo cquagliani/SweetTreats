@@ -14,7 +14,7 @@ struct DessertDetailView: View {
     @State private var selectedSegment = 0
     
     var body: some View {
-        
+        // Organize ingredients and measurements into iterable arrays
         let (ingredients, measurements) = getIngredientsMeasurements(data: data.dessertDetails)
         
         VStack {
@@ -64,10 +64,12 @@ struct DessertDetailView: View {
             } else {
                 List {
                     ForEach(0..<min(ingredients.count, measurements.count), id: \.self) { index in
-                        HStack {
-                            Text(ingredients[index])
-                            Spacer()
-                            Text(measurements[index])
+                        if !ingredients[index].isEmpty || !measurements[index].isEmpty { // filter out any null or empty values
+                            HStack {
+                                Text(ingredients[index])
+                                Spacer()
+                                Text(measurements[index])
+                            }
                         }
                     }
                 }
