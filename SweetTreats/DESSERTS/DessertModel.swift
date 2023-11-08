@@ -62,7 +62,7 @@ struct URLImage: View {
                 .resizable()
                 .scaledToFill()
                 .aspectRatio(contentMode: .fill)
-                .frame(width: width, height: height)
+                .frame(width: width, height: height, alignment: .leading)
         } else {
             // If no image exists, display a placeholder system image
             Image(systemName: "photo.artframe")

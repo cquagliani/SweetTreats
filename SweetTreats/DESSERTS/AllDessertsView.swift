@@ -13,11 +13,11 @@ struct AllDessertsView: View {
     var body: some View {
         NavigationStack {
             List(viewModel.Desserts, id: \.idMeal) { dessert in
-                NavigationLink(destination: DessertDetailView(OriginalDessert: dessert)) {
+                NavigationLink(destination: DessertDetailView(originalDessert: dessert)) {
                     DessertCard(dessert: dessert)
                 }
             }
-            .padding(.top, 20)
+            .padding(.top, 15)
             .listStyle(.plain)
             .navigationTitle("All Desserts")
             .onAppear {

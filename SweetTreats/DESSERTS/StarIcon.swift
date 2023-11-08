@@ -19,6 +19,5 @@ struct StarIcon: View {
                 .font(.title)
                 .imageScale(.small)
         }
-        .padding(2)
     }
 }
