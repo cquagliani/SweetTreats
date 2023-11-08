@@ -71,8 +71,9 @@ struct SegmentedMenuView: View {
         
         if selectedSegment == 0 {
             ScrollView {
+                // Validate consistent spacing and display instructions
                 ForEach(dessertDetails.dessertDetails, id:\.idMeal) { dessert in
-                    Text(dessert.strInstructions)
+                    Text(dessert.strInstructions.replacingOccurrences(of: "\r\n\r\n", with: "\n\n").replacingOccurrences(of: "\r\n", with: "\n\n"))
                 }
                 .padding()
             }
@@ -81,7 +82,7 @@ struct SegmentedMenuView: View {
                 ForEach(0..<min(ingredients.count, measurements.count), id: \.self) { index in
                     if !ingredients[index].isEmpty || !measurements[index].isEmpty { // filter out any null or empty values
                         HStack {
-                            Text(ingredients[index])
+                            Text(ingredients[index].capitalized)
                             Spacer()
                             Text(measurements[index])
                         }
@@ -95,6 +96,7 @@ struct SegmentedMenuView: View {
     }
     
     // Function to organize all ingredients and measurements into arrays to display easier
+    // Ideally shouldn't hardcode the properties: room for improvement
     private func getIngredientsMeasurements(dessertDetails: [DessertDetail]) -> (ingredients: [String], measurements: [String]) {
         var ingredients: [String] = []
         var measurements: [String] = []
