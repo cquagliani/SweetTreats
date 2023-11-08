@@ -14,25 +14,22 @@ struct DessertCard: View {
     
     var body: some View {
         ZStack {
-            URLImage(urlString: dessert.strMealThumb, width: 350, height: 100)
+            URLImage(urlString: dessert.strMealThumb, width: 350, height: 125)
                 .cornerRadius(corner)
                 .shadow(radius: shadow)
                 .clipped()
             
             // Dark overlay to improve title readability
             Rectangle()
-                .frame(width: 350, height: 100)
+                .frame(width: 350, height: 125)
                 .foregroundColor(.black)
-                .opacity(0.3)
+                .opacity(0.35)
                 .cornerRadius(corner)
                 .shadow(radius: shadow)
             
             HStack {
                 Text(dessert.strMeal)
-                    .font(
-                        .title2
-                        .bold()
-                    )
+                    .font(.system(size: 18, weight: .bold))
                     .foregroundColor(.white)
                     .padding(.leading)
                 Spacer() // Aligns text to the left

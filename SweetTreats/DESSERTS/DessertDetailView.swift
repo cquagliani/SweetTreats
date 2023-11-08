@@ -40,12 +40,20 @@ struct DessertNameStarIcon: View {
     
     var body: some View {
         HStack {
-            ForEach(dessertDetails.dessertDetails, id:\.idMeal) { dessert in
-                Text(dessert.strMeal)
-                    .font(.title.weight(.bold))
-                    .frame(maxWidth: .infinity, alignment: .topLeading)
-                    .padding()
+            VStack {
+                ForEach(dessertDetails.dessertDetails, id:\.idMeal) { dessert in
+                    Text(dessert.strMeal)
+                        .font(.title.weight(.bold))
+                        .frame(maxWidth: .infinity, alignment: .topLeading)
+                        .padding(.bottom, 2)
+                    Text(dessert.strCategory)
+                        .font(.system(size: 16, weight: .regular))
+                        .frame(maxWidth: .infinity, alignment: .leading)
+
+                }
+                .padding(.horizontal)
             }
+
             StarIcon()
             .padding()
         }
