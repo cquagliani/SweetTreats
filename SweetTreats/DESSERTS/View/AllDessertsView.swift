@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct AllDessertsView: View {
-    @StateObject var viewModel = ViewModel()
+    @StateObject var viewModel = DessertViewModel()
     
     var body: some View {
         NavigationStack {
             List(viewModel.Desserts, id: \.idMeal) { dessert in
                 NavigationLink(destination: DessertDetailView(originalDessert: dessert)) {
-                    DessertCard(dessert: dessert)
+                    DessertCardView(dessert: dessert)
                 }
                 .listRowBackground(Color.clear)
                 .listRowSeparator(.hidden)

@@ -12,12 +12,13 @@
 		213DA4772AF9DC3600C2317D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 213DA4762AF9DC3600C2317D /* Assets.xcassets */; };
 		213DA47A2AF9DC3600C2317D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 213DA4792AF9DC3600C2317D /* Preview Assets.xcassets */; };
 		213DA4812AF9DE1E00C2317D /* AllDessertsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213DA4802AF9DE1E00C2317D /* AllDessertsView.swift */; };
-		213DA4852AF9E0C600C2317D /* ShoppingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213DA4842AF9E0C600C2317D /* ShoppingView.swift */; };
-		213DA4882AF9EED700C2317D /* DessertCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213DA4872AF9EED700C2317D /* DessertCard.swift */; };
+		213DA4882AF9EED700C2317D /* DessertCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213DA4872AF9EED700C2317D /* DessertCardView.swift */; };
 		213DA48F2AFAE3EF00C2317D /* DessertModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213DA48E2AFAE3EF00C2317D /* DessertModel.swift */; };
 		213DA4912AFAE95600C2317D /* DessertDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213DA4902AFAE95600C2317D /* DessertDetailView.swift */; };
-		213DA4932AFAF71B00C2317D /* StarredRecipesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213DA4922AFAF71B00C2317D /* StarredRecipesView.swift */; };
-		213DA4952AFB2A0F00C2317D /* StarIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213DA4942AFB2A0F00C2317D /* StarIcon.swift */; };
+		213DA4982AFC6C0100C2317D /* DetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213DA4972AFC6C0100C2317D /* DetailsModel.swift */; };
+		213DA49A2AFC6C6C00C2317D /* ImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213DA4992AFC6C6C00C2317D /* ImageModel.swift */; };
+		213DA49C2AFC6E5200C2317D /* DessertViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213DA49B2AFC6E5200C2317D /* DessertViewModel.swift */; };
+		213DA49E2AFC6E9200C2317D /* DetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213DA49D2AFC6E9200C2317D /* DetailsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,12 +28,13 @@
 		213DA4762AF9DC3600C2317D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		213DA4792AF9DC3600C2317D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		213DA4802AF9DE1E00C2317D /* AllDessertsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllDessertsView.swift; sourceTree = "<group>"; };
-		213DA4842AF9E0C600C2317D /* ShoppingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingView.swift; sourceTree = "<group>"; };
-		213DA4872AF9EED700C2317D /* DessertCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DessertCard.swift; sourceTree = "<group>"; };
+		213DA4872AF9EED700C2317D /* DessertCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DessertCardView.swift; sourceTree = "<group>"; };
 		213DA48E2AFAE3EF00C2317D /* DessertModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DessertModel.swift; sourceTree = "<group>"; };
 		213DA4902AFAE95600C2317D /* DessertDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DessertDetailView.swift; sourceTree = "<group>"; };
-		213DA4922AFAF71B00C2317D /* StarredRecipesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarredRecipesView.swift; sourceTree = "<group>"; };
-		213DA4942AFB2A0F00C2317D /* StarIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarIcon.swift; sourceTree = "<group>"; };
+		213DA4972AFC6C0100C2317D /* DetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsModel.swift; sourceTree = "<group>"; };
+		213DA4992AFC6C6C00C2317D /* ImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageModel.swift; sourceTree = "<group>"; };
+		213DA49B2AFC6E5200C2317D /* DessertViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DessertViewModel.swift; sourceTree = "<group>"; };
+		213DA49D2AFC6E9200C2317D /* DetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,8 +70,6 @@
 				213DA4862AF9EE8D00C2317D /* DESSERTS */,
 				213DA4722AF9DC3500C2317D /* SweetTreatsApp.swift */,
 				213DA4742AF9DC3500C2317D /* ContentView.swift */,
-				213DA4842AF9E0C600C2317D /* ShoppingView.swift */,
-				213DA4922AFAF71B00C2317D /* StarredRecipesView.swift */,
 				213DA4762AF9DC3600C2317D /* Assets.xcassets */,
 				213DA4782AF9DC3600C2317D /* Preview Content */,
 			);
@@ -87,13 +87,40 @@
 		213DA4862AF9EE8D00C2317D /* DESSERTS */ = {
 			isa = PBXGroup;
 			children = (
-				213DA4802AF9DE1E00C2317D /* AllDessertsView.swift */,
-				213DA4872AF9EED700C2317D /* DessertCard.swift */,
-				213DA48E2AFAE3EF00C2317D /* DessertModel.swift */,
-				213DA4902AFAE95600C2317D /* DessertDetailView.swift */,
-				213DA4942AFB2A0F00C2317D /* StarIcon.swift */,
+				213DA4A12AFC6F4F00C2317D /* ViewModel */,
+				213DA4A02AFC6F0600C2317D /* View */,
+				213DA49F2AFC6ECD00C2317D /* Model */,
 			);
 			path = DESSERTS;
+			sourceTree = "<group>";
+		};
+		213DA49F2AFC6ECD00C2317D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				213DA48E2AFAE3EF00C2317D /* DessertModel.swift */,
+				213DA4972AFC6C0100C2317D /* DetailsModel.swift */,
+				213DA4992AFC6C6C00C2317D /* ImageModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		213DA4A02AFC6F0600C2317D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				213DA4802AF9DE1E00C2317D /* AllDessertsView.swift */,
+				213DA4872AF9EED700C2317D /* DessertCardView.swift */,
+				213DA4902AFAE95600C2317D /* DessertDetailView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		213DA4A12AFC6F4F00C2317D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				213DA49B2AFC6E5200C2317D /* DessertViewModel.swift */,
+				213DA49D2AFC6E9200C2317D /* DetailsViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -166,15 +193,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				213DA4852AF9E0C600C2317D /* ShoppingView.swift in Sources */,
 				213DA48F2AFAE3EF00C2317D /* DessertModel.swift in Sources */,
 				213DA4912AFAE95600C2317D /* DessertDetailView.swift in Sources */,
 				213DA4752AF9DC3500C2317D /* ContentView.swift in Sources */,
-				213DA4882AF9EED700C2317D /* DessertCard.swift in Sources */,
+				213DA4882AF9EED700C2317D /* DessertCardView.swift in Sources */,
+				213DA4982AFC6C0100C2317D /* DetailsModel.swift in Sources */,
 				213DA4812AF9DE1E00C2317D /* AllDessertsView.swift in Sources */,
-				213DA4952AFB2A0F00C2317D /* StarIcon.swift in Sources */,
-				213DA4932AFAF71B00C2317D /* StarredRecipesView.swift in Sources */,
 				213DA4732AF9DC3500C2317D /* SweetTreatsApp.swift in Sources */,
+				213DA49E2AFC6E9200C2317D /* DetailsViewModel.swift in Sources */,
+				213DA49C2AFC6E5200C2317D /* DessertViewModel.swift in Sources */,
+				213DA49A2AFC6C6C00C2317D /* ImageModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

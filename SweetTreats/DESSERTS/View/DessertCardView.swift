@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct DessertCard: View {
+struct DessertCardView: View {
     let dessert: Dessert
     let corner = 10.0 // Controls corner radius of all elements in the ZStack
     let shadow = 10.0 // Controls shadow radius of all elements in the ZStack
