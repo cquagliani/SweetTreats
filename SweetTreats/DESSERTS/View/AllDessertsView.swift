@@ -8,12 +8,14 @@
 import SwiftUI
 
 struct AllDessertsView: View {
-    @StateObject var viewModel = DessertViewModel()
+    @StateObject var viewModel: DessertViewModel
+    @ObservedObject var dessertDetails: DetailsViewModel
+
     
     var body: some View {
         NavigationStack {
-            List(viewModel.Desserts, id: \.idMeal) { dessert in
-                NavigationLink(destination: DessertDetailView(originalDessert: dessert)) {
+            List(viewModel.desserts, id: \.idMeal) { dessert in
+                NavigationLink(destination: DessertDetailView(originalDessert: dessert, dessertDetails: dessertDetails)) {
                     DessertCardView(dessert: dessert)
                 }
                 .listRowBackground(Color.clear)
@@ -32,6 +34,9 @@ struct AllDessertsView: View {
 
 struct AllDessertsList_Previews: PreviewProvider {
     static var previews: some View {
-        AllDessertsView()
+        AllDessertsView(
+            viewModel: DessertViewModel(networkService: NetworkService()),
+            dessertDetails: DetailsViewModel(networkService: NetworkService())
+        )
     }
 }

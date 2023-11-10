@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        AllDessertsView()
+        AllDessertsView(viewModel: DessertViewModel(networkService: NetworkService()), dessertDetails: DetailsViewModel(networkService: NetworkService()))
     }
 }
 

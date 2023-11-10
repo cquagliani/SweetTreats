@@ -10,18 +10,22 @@ import SwiftUI
 class DetailsViewModel: ObservableObject {
     @Published var dessertDetails: [DessertDetail] = []
     
+    private let networkService: NetworkServiceProtocol
+    
+    init(networkService: NetworkServiceProtocol) {
+        self.networkService = networkService
+    }
+    
     func fetch(idMeal: String) {
         guard let url = URL(string: "https://themealdb.com/api/json/v1/1/lookup.php?i=\(idMeal)") else {
             return
         }
         
-        let task = URLSession.shared.dataTask(with: url) { [weak self] data,
-            _, error in
+        networkService.fetchData(from: url) { [weak self] data, error in
             guard let data = data, error == nil else {
                 return
             }
-            
-            // Convert to JSON
+
             do {
                 let response = try JSONDecoder().decode(DetailResponse.self, from: data)
                 DispatchQueue.main.async {
@@ -32,7 +36,6 @@ class DetailsViewModel: ObservableObject {
                 print(error)
             }
         }
-        
-        task.resume()
     }
 }
+

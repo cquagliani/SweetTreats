@@ -9,7 +9,7 @@ import SwiftUI
 
 struct DessertDetailView: View {
     let originalDessert: Dessert
-    @ObservedObject var dessertDetails = DetailsViewModel()
+    @ObservedObject var dessertDetails: DetailsViewModel
     @State private var selectedSegment = 0
     
     var body: some View {

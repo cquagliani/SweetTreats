@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		211D6ADB2AFED7BB00F4F0F3 /* NetworkServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211D6ADA2AFED7BB00F4F0F3 /* NetworkServiceProtocol.swift */; };
+		211D6ADD2AFED7EF00F4F0F3 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211D6ADC2AFED7EF00F4F0F3 /* NetworkService.swift */; };
 		213DA4732AF9DC3500C2317D /* SweetTreatsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213DA4722AF9DC3500C2317D /* SweetTreatsApp.swift */; };
 		213DA4752AF9DC3500C2317D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213DA4742AF9DC3500C2317D /* ContentView.swift */; };
 		213DA4772AF9DC3600C2317D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 213DA4762AF9DC3600C2317D /* Assets.xcassets */; };
@@ -22,6 +24,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		211D6ADA2AFED7BB00F4F0F3 /* NetworkServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceProtocol.swift; sourceTree = "<group>"; };
+		211D6ADC2AFED7EF00F4F0F3 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		213DA46F2AF9DC3500C2317D /* SweetTreats.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SweetTreats.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		213DA4722AF9DC3500C2317D /* SweetTreatsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SweetTreatsApp.swift; sourceTree = "<group>"; };
 		213DA4742AF9DC3500C2317D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -48,6 +52,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		211D6AD92AFED79A00F4F0F3 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				211D6ADA2AFED7BB00F4F0F3 /* NetworkServiceProtocol.swift */,
+				211D6ADC2AFED7EF00F4F0F3 /* NetworkService.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		213DA4662AF9DC3500C2317D = {
 			isa = PBXGroup;
 			children = (
@@ -87,6 +100,7 @@
 		213DA4862AF9EE8D00C2317D /* DESSERTS */ = {
 			isa = PBXGroup;
 			children = (
+				211D6AD92AFED79A00F4F0F3 /* Network */,
 				213DA4A12AFC6F4F00C2317D /* ViewModel */,
 				213DA4A02AFC6F0600C2317D /* View */,
 				213DA49F2AFC6ECD00C2317D /* Model */,
@@ -202,6 +216,8 @@
 				213DA4732AF9DC3500C2317D /* SweetTreatsApp.swift in Sources */,
 				213DA49E2AFC6E9200C2317D /* DetailsViewModel.swift in Sources */,
 				213DA49C2AFC6E5200C2317D /* DessertViewModel.swift in Sources */,
+				211D6ADB2AFED7BB00F4F0F3 /* NetworkServiceProtocol.swift in Sources */,
+				211D6ADD2AFED7EF00F4F0F3 /* NetworkService.swift in Sources */,
 				213DA49A2AFC6C6C00C2317D /* ImageModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
