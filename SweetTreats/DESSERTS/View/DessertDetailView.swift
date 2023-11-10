@@ -41,7 +41,7 @@ struct DessertNameCategory: View {
     var body: some View {
         VStack {
             ForEach(dessertDetails.dessertDetails, id:\.idMeal) { dessert in
-                Text(dessert.strMeal)
+                Text(dessert.strMeal.capitalized)
                     .font(.title.weight(.bold))
                     .frame(maxWidth: .infinity, alignment: .topLeading)
                     .padding(.bottom, 2)
@@ -61,9 +61,6 @@ struct SegmentedMenuView: View {
     @Binding var selectedSegment: Int
     
     var body: some View {
-        // Organize ingredients and measurements into iterable arrays
-        let (ingredients, measurements) = getIngredientsMeasurements(dessertDetails: dessertDetails.dessertDetails)
-        
         // Manages the segmented menu view (i.e. whether to show instructions or ingredients)
         Picker("", selection: $selectedSegment) {
             Text("Instructions").tag(0)
@@ -71,63 +68,46 @@ struct SegmentedMenuView: View {
         }
         .pickerStyle(SegmentedPickerStyle())
         .padding()
-        
+                
         if selectedSegment == 0 {
-            ScrollView {
-                // Validate consistent spacing and display instructions
-                ForEach(dessertDetails.dessertDetails, id:\.idMeal) { dessert in
-                    Text(dessert.strInstructions.replacingOccurrences(of: "\r\n\r\n", with: "\n\n").replacingOccurrences(of: "\r\n", with: "\n\n"))
-                }
-                .padding()
-            }
+            InstructionsView(dessertDetails: dessertDetails)
         } else {
-            List {
-                ForEach(0..<min(ingredients.count, measurements.count), id: \.self) { index in
-                    if !ingredients[index].isEmpty || !measurements[index].isEmpty { // filter out any null or empty values
-                        HStack {
-                            Text(ingredients[index].capitalized)
-                            Spacer()
-                            Text(measurements[index])
-                        }
+            IngredientsMeasurementsView(dessertDetails: dessertDetails)
+        }
+    }
+}
+
+struct InstructionsView: View {
+    @ObservedObject var dessertDetails: DetailsViewModel
+    
+    var body: some View {
+        ScrollView {
+            // Validate consistent spacing and display instructions
+            ForEach(dessertDetails.dessertDetails, id:\.idMeal) { dessert in
+                Text(dessert.strInstructions.replacingOccurrences(of: "\r\n\r\n", with: "\n\n").replacingOccurrences(of: "\r\n", with: "\n\n"))
+            }
+            .padding()
+        }
+    }
+    
+}
+
+struct IngredientsMeasurementsView: View {
+    @ObservedObject var dessertDetails: DetailsViewModel
+    
+    var body: some View {
+        List {
+            ForEach(dessertDetails.dessertDetails, id:\.idMeal) { dessert in
+                ForEach(0..<dessert.ingredients.count, id: \.self) { index in
+                    HStack {
+                        Text(dessert.ingredients[index].capitalized)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                        Text(dessert.measurements[index])
+                            .frame(alignment: .trailing)
                     }
                 }
             }
-            .listStyle(.plain)
         }
-        Spacer()
-
-    }
-    
-    // Function to organize all ingredients and measurements into arrays to display easier
-    // Ideally shouldn't hardcode the properties: room for improvement
-    private func getIngredientsMeasurements(dessertDetails: [DessertDetail]) -> (ingredients: [String], measurements: [String]) {
-        var ingredients: [String] = []
-        var measurements: [String] = []
-        
-        for dessert in dessertDetails {
-            ingredients.append(dessert.strIngredient1)
-            ingredients.append(dessert.strIngredient2)
-            ingredients.append(dessert.strIngredient3)
-            ingredients.append(dessert.strIngredient4)
-            ingredients.append(dessert.strIngredient5)
-            ingredients.append(dessert.strIngredient6)
-            ingredients.append(dessert.strIngredient7)
-            ingredients.append(dessert.strIngredient8)
-            ingredients.append(dessert.strIngredient9)
-            ingredients.append(dessert.strIngredient10)
-            
-            measurements.append(dessert.strMeasure1)
-            measurements.append(dessert.strMeasure2)
-            measurements.append(dessert.strMeasure3)
-            measurements.append(dessert.strMeasure4)
-            measurements.append(dessert.strMeasure5)
-            measurements.append(dessert.strMeasure6)
-            measurements.append(dessert.strMeasure7)
-            measurements.append(dessert.strMeasure8)
-            measurements.append(dessert.strMeasure9)
-            measurements.append(dessert.strMeasure10)
-        }
-        
-        return (ingredients, measurements)
+        .listStyle(.plain)
     }
 }
