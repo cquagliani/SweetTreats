@@ -28,11 +28,11 @@ struct DessertCardView: View {
                 .shadow(radius: shadow)
             
             HStack {
-                Text(dessert.strMeal)
+                Text(dessert.strMeal.capitalized)
                     .font(.system(size: 18, weight: .bold))
                     .foregroundColor(.white)
                     .padding(.leading)
-                Spacer() // Aligns text to the left
+                    .frame(maxWidth: .infinity, alignment: .leading)
             }
         }
         .cornerRadius(corner)
