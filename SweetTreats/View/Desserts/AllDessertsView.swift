@@ -13,22 +13,23 @@ struct AllDessertsView: View {
 
     
     var body: some View {
-        NavigationStack {
-            List(viewModel.desserts, id: \.idMeal) { dessert in
-                NavigationLink(destination: DessertDetailView(originalDessert: dessert, dessertDetails: dessertDetails)) {
-                    DessertCardView(dessert: dessert)
-                }
-                .listRowBackground(Color.clear)
-                .listRowSeparator(.hidden)
-                .padding(.bottom, -10)
-            }
-            .padding(.top, 15)
-            .listStyle(.plain)
-            .navigationTitle("All Desserts")
-            .onAppear {
-                viewModel.fetch()
-            }
-        }
+//        NavigationStack {
+//            List(viewModel.desserts, id: \.idMeal) { dessert in
+//                NavigationLink(destination: DessertDetailView(originalDessert: dessert, dessertDetails: dessertDetails)) {
+//                    DessertCardView(dessert: dessert)
+//                }
+//                .listRowBackground(Color.clear)
+//                .listRowSeparator(.hidden)
+//                .padding(.bottom, -10)
+//            }
+//            .padding(.top, 15)
+//            .listStyle(.plain)
+//            .navigationTitle("All Desserts")
+//            .onAppear {
+//                viewModel.fetch()
+//            }
+//        }
+        Text("Hello World")
     }
 }
 

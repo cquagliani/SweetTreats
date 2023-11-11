@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		211AC1A42AFF47F8006FC662 /* AllCategoriesChipsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211AC1A32AFF47F8006FC662 /* AllCategoriesChipsView.swift */; };
+		211AC1A62AFF4B7D006FC662 /* HomeFeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211AC1A52AFF4B7D006FC662 /* HomeFeedView.swift */; };
 		211D6ADB2AFED7BB00F4F0F3 /* NetworkServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211D6ADA2AFED7BB00F4F0F3 /* NetworkServiceProtocol.swift */; };
 		211D6ADD2AFED7EF00F4F0F3 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211D6ADC2AFED7EF00F4F0F3 /* NetworkService.swift */; };
 		211D6AFE2AFF0C9000F4F0F3 /* DessertViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211D6AFD2AFF0C9000F4F0F3 /* DessertViewModelTests.swift */; };
@@ -43,6 +45,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		211AC1A32AFF47F8006FC662 /* AllCategoriesChipsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCategoriesChipsView.swift; sourceTree = "<group>"; };
+		211AC1A52AFF4B7D006FC662 /* HomeFeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFeedView.swift; sourceTree = "<group>"; };
 		211D6ADA2AFED7BB00F4F0F3 /* NetworkServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceProtocol.swift; sourceTree = "<group>"; };
 		211D6ADC2AFED7EF00F4F0F3 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		211D6AE52AFF06B400F4F0F3 /* AllDessertsViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AllDessertsViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -84,6 +88,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		211AC1A72AFF4B83006FC662 /* Desserts */ = {
+			isa = PBXGroup;
+			children = (
+				213DA4902AFAE95600C2317D /* DessertDetailView.swift */,
+				213DA4802AF9DE1E00C2317D /* AllDessertsView.swift */,
+			);
+			path = Desserts;
+			sourceTree = "<group>";
+		};
 		211D6AD92AFED79A00F4F0F3 /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -175,9 +188,10 @@
 		213DA4A02AFC6F0600C2317D /* View */ = {
 			isa = PBXGroup;
 			children = (
-				213DA4802AF9DE1E00C2317D /* AllDessertsView.swift */,
+				211AC1A72AFF4B83006FC662 /* Desserts */,
 				213DA4872AF9EED700C2317D /* DessertCardView.swift */,
-				213DA4902AFAE95600C2317D /* DessertDetailView.swift */,
+				211AC1A32AFF47F8006FC662 /* AllCategoriesChipsView.swift */,
+				211AC1A52AFF4B7D006FC662 /* HomeFeedView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -317,8 +331,10 @@
 				213DA4732AF9DC3500C2317D /* SweetTreatsApp.swift in Sources */,
 				213DA49E2AFC6E9200C2317D /* DetailsViewModel.swift in Sources */,
 				213DA49C2AFC6E5200C2317D /* DessertViewModel.swift in Sources */,
+				211AC1A62AFF4B7D006FC662 /* HomeFeedView.swift in Sources */,
 				211D6ADB2AFED7BB00F4F0F3 /* NetworkServiceProtocol.swift in Sources */,
 				211D6ADD2AFED7EF00F4F0F3 /* NetworkService.swift in Sources */,
+				211AC1A42AFF47F8006FC662 /* AllCategoriesChipsView.swift in Sources */,
 				213DA49A2AFC6C6C00C2317D /* ImageModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

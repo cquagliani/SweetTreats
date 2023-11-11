@@ -8,11 +8,36 @@
 import SwiftUI
 
 struct HomeFeedView: View {
+    @StateObject var viewModel: DessertViewModel
+    @ObservedObject var dessertDetails: DetailsViewModel
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack {
+            AllCategoriesChipsView()
+                .padding(.top, 15)
+
+            List(viewModel.desserts, id: \.idMeal) { dessert in
+                NavigationLink(destination: DessertDetailView(originalDessert: dessert, dessertDetails: dessertDetails)) {
+                    DessertCardView(dessert: dessert)
+                }
+                .listRowBackground(Color.clear)
+                .listRowSeparator(.hidden)
+                .padding(.bottom, -10)
+            }
+            .listStyle(.plain)
+            .navigationTitle("All Desserts")
+            .onAppear {
+                viewModel.fetch()
+            }
+        }
     }
 }
 
-#Preview {
-    HomeFeedView()
+struct HomeFeedView_Previews: PreviewProvider {
+    static var previews: some View {
+        HomeFeedView(
+            viewModel: DessertViewModel(networkService: NetworkService()),
+            dessertDetails: DetailsViewModel(networkService: NetworkService())
+        )
+    }
 }
