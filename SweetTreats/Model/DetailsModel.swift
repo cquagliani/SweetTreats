@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct DetailResponse: Codable {
-    let meals: [DessertDetail]
+    let meals: [RecipeDetails]
 }
 
-struct DessertDetail: Hashable, Codable {
+struct RecipeDetails: Hashable, Codable {
     let strMeal: String
     let strMealThumb: String
     let idMeal: String

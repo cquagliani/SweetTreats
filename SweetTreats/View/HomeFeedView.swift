@@ -8,17 +8,19 @@
 import SwiftUI
 
 struct HomeFeedView: View {
-    @StateObject var viewModel: DessertViewModel
-    @ObservedObject var dessertDetails: DetailsViewModel
+    @StateObject var viewModel: RecipeViewModel
+    @ObservedObject var recipeDetails: DetailsViewModel
+    
+    @State private var selectedCategory: String = "Beef"
 
     var body: some View {
         NavigationStack {
-            AllCategoriesChipsView()
+            AllCategoriesChipsView(selectedCategory: $selectedCategory)
                 .padding(.top, 15)
 
-            List(viewModel.desserts, id: \.idMeal) { dessert in
-                NavigationLink(destination: DessertDetailView(originalDessert: dessert, dessertDetails: dessertDetails)) {
-                    RecipeCardView(dessert: dessert)
+            List(viewModel.recipes, id: \.idMeal) { recipe in
+                NavigationLink(destination: RecipeDetailView(originalRecipe: recipe, recipeDetails: recipeDetails)) {
+                    RecipeCardView(recipe: recipe)
                 }
                 .listRowBackground(Color.clear)
                 .listRowSeparator(.hidden)
@@ -27,17 +29,22 @@ struct HomeFeedView: View {
             .listStyle(.plain)
             .navigationTitle("Discover")
             .onAppear {
-                viewModel.fetch()
+                viewModel.fetch(strCategory: selectedCategory)
+            }
+            .onChange(of: selectedCategory) {
+                viewModel.fetch(strCategory: selectedCategory)
             }
         }
     }
 }
 
+//    .onAppear {recipeDetails.fetch(idMeal: originalDessert.idMeal)}
+
 struct HomeFeedView_Previews: PreviewProvider {
     static var previews: some View {
         HomeFeedView(
-            viewModel: DessertViewModel(networkService: NetworkService()),
-            dessertDetails: DetailsViewModel(networkService: NetworkService())
+            viewModel: RecipeViewModel(networkService: NetworkService()),
+            recipeDetails: DetailsViewModel(networkService: NetworkService())
         )
     }
 }

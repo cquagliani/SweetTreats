@@ -1,5 +1,5 @@
 //
-//  DessertViewModel.swift
+//  RecipeViewModel.swift
 //  SweetTreats
 //
 //  Created by Chris Quagliani on 11/8/23.
@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-class DessertViewModel: ObservableObject {
-    @Published var desserts: [Dessert] = []
+class RecipeViewModel: ObservableObject {
+    @Published var recipes: [Recipe] = []
     var error: Error?
 
     private let networkService: NetworkServiceProtocol
@@ -17,8 +17,8 @@ class DessertViewModel: ObservableObject {
         self.networkService = networkService
     }
 
-    func fetch() {
-        guard let url = URL(string: "https://www.themealdb.com/api/json/v1/1/filter.php?c=Dessert") else {
+    func fetch(strCategory: String) {
+        guard let url = URL(string: "https://www.themealdb.com/api/json/v1/1/filter.php?c=\(strCategory)") else {
             return
         }
 
@@ -29,7 +29,7 @@ class DessertViewModel: ObservableObject {
                 } else if let data = data {
                     do {
                         let response = try JSONDecoder().decode(Response.self, from: data)
-                        self?.desserts = response.meals
+                        self?.recipes = response.meals
                     } catch {
                         self?.error = error
                     }

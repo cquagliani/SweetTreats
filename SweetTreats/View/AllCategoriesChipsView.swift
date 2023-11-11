@@ -9,24 +9,26 @@ import SwiftUI
 
 struct AllCategoriesChipsView: View {
     @State private var selectedButton: Int?
+    @Binding var selectedCategory: String
+    
     let categories = ["Beef", "Breakfast", "Chicken", "Dessert", "Goat", "Lamb", "Miscellaneous", "Pasta", "Pork", "Seafood", "Side", "Starter", "Vegan", "Vegetarian"]
     
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack {
-                ForEach(0..<14) { index in // 14 = categories.count - Swift requires an integer literal
-                    CategoryChip(category: categories[index], isSelected: Binding(
-                        get: { self.selectedButton == index },
-                        set: { isSelected in
-                            if isSelected {
-                                self.selectedButton = index
-                            } else if self.selectedButton == index {
-                                self.selectedButton = nil
+                ForEach(0..<14) { index in
+                    CategoryChip(
+                        category: categories[index],
+                        isSelected: Binding(
+                            get: { self.selectedCategory == categories[index] },
+                            set: { isSelected in
+                                if isSelected {
+                                    self.selectedCategory = categories[index]
+                                }
                             }
-                        }
-                    ))
+                        )
+                    )
                 }
-                
             }
         }
         .padding(.horizontal, 16)
@@ -46,7 +48,6 @@ struct CategoryChip: View {
         Button(action: {
             self.isSelected.toggle()
             print("You selected: \(self.category)")
-            // Trigger API call for that particular category
         }) {
             ZStack {
                 Text(category)
@@ -64,11 +65,5 @@ struct CategoryChip: View {
             )
             .background(isSelected ? accentColor : primaryColor, in: Capsule())
         }
-    }
-}
-
-struct AllCategories_Previews: PreviewProvider {
-    static var previews: some View {
-        AllCategoriesChipsView()
     }
 }

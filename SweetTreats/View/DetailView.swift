@@ -1,5 +1,5 @@
 //
-//  DessertDetailView.swift
+//  RecipeDetailView.swift
 //  SweetTreats
 //
 //  Created by Chris Quagliani on 11/7/23.
@@ -7,45 +7,45 @@
 
 import SwiftUI
 
-struct DessertDetailView: View {
-    let originalDessert: Dessert
-    @ObservedObject var dessertDetails: DetailsViewModel
+struct RecipeDetailView: View {
+    let originalRecipe: Recipe
+    @ObservedObject var recipeDetails: DetailsViewModel
     @State private var selectedSegment = 0
     
     var body: some View {
         VStack(spacing: 0) {
-            DessertImagesView(dessertDetails: dessertDetails)
-            DessertNameCategory(dessertDetails: dessertDetails)
-            SegmentedMenuView(dessertDetails: dessertDetails, selectedSegment: $selectedSegment)
-                .onAppear {dessertDetails.fetch(idMeal: originalDessert.idMeal)}
+            RecipeImagesView(recipeDetails: recipeDetails)
+            RecipeNameCategory(recipeDetails: recipeDetails)
+            SegmentedMenuView(recipeDetails: recipeDetails, selectedSegment: $selectedSegment)
+                .onAppear {recipeDetails.fetch(idMeal: originalRecipe.idMeal)}
         }
     }
 }
 
-struct DessertImagesView: View {
-    @ObservedObject var dessertDetails: DetailsViewModel
+struct RecipeImagesView: View {
+    @ObservedObject var recipeDetails: DetailsViewModel
     
     var body: some View {
-        ForEach(dessertDetails.dessertDetails, id:\.idMeal) { dessert in
-            URLImage(urlString: dessert.strMealThumb, width: 400, height: 150)
+        ForEach(recipeDetails.recipeDetails, id:\.idMeal) { recipe in
+            URLImage(urlString: recipe.strMealThumb, width: 400, height: 150)
                 .ignoresSafeArea(.container)
         }
     }
     
 }
 
-struct DessertNameCategory: View {
-    @ObservedObject var dessertDetails: DetailsViewModel
+struct RecipeNameCategory: View {
+    @ObservedObject var recipeDetails: DetailsViewModel
     
     var body: some View {
         VStack {
-            ForEach(dessertDetails.dessertDetails, id:\.idMeal) { dessert in
-                Text(dessert.strMeal.capitalized)
+            ForEach(recipeDetails.recipeDetails, id:\.idMeal) { recipe in
+                Text(recipe.strMeal.capitalized)
                     .font(.title.weight(.bold))
                     .frame(maxWidth: .infinity, alignment: .topLeading)
                     .padding(.bottom, 2)
                 
-                Text(dessert.strCategory)
+                Text(recipe.strCategory)
                     .font(.system(size: 16, weight: .regular))
                     .frame(maxWidth: .infinity, alignment: .leading)
             }
@@ -56,7 +56,7 @@ struct DessertNameCategory: View {
 }
 
 struct SegmentedMenuView: View {
-    @ObservedObject var dessertDetails: DetailsViewModel
+    @ObservedObject var recipeDetails: DetailsViewModel
     @Binding var selectedSegment: Int
     
     var body: some View {
@@ -69,21 +69,21 @@ struct SegmentedMenuView: View {
         .padding()
                 
         if selectedSegment == 0 {
-            InstructionsView(dessertDetails: dessertDetails)
+            InstructionsView(recipeDetails: recipeDetails)
         } else {
-            IngredientsMeasurementsView(dessertDetails: dessertDetails)
+            IngredientsMeasurementsView(recipeDetails: recipeDetails)
         }
     }
 }
 
 struct InstructionsView: View {
-    @ObservedObject var dessertDetails: DetailsViewModel
+    @ObservedObject var recipeDetails: DetailsViewModel
     
     var body: some View {
         ScrollView {
             // Validate consistent spacing and display instructions
-            ForEach(dessertDetails.dessertDetails, id:\.idMeal) { dessert in
-                Text(dessert.strInstructions.replacingOccurrences(of: "\r\n\r\n", with: "\n\n").replacingOccurrences(of: "\r\n", with: "\n\n"))
+            ForEach(recipeDetails.recipeDetails, id:\.idMeal) { recipe in
+                Text(recipe.strInstructions.replacingOccurrences(of: "\r\n\r\n", with: "\n\n").replacingOccurrences(of: "\r\n", with: "\n\n"))
             }
             .padding()
         }
@@ -92,16 +92,16 @@ struct InstructionsView: View {
 }
 
 struct IngredientsMeasurementsView: View {
-    @ObservedObject var dessertDetails: DetailsViewModel
+    @ObservedObject var recipeDetails: DetailsViewModel
     
     var body: some View {
         List {
-            ForEach(dessertDetails.dessertDetails, id:\.idMeal) { dessert in
-                ForEach(0..<dessert.ingredients.count, id: \.self) { index in
+            ForEach(recipeDetails.recipeDetails, id:\.idMeal) { recipe in
+                ForEach(0..<recipe.ingredients.count, id: \.self) { index in
                     HStack {
-                        Text(dessert.ingredients[index].capitalized)
+                        Text(recipe.ingredients[index].capitalized)
                             .frame(maxWidth: .infinity, alignment: .leading)
-                        Text(dessert.measurements[index])
+                        Text(recipe.measurements[index])
                             .frame(alignment: .trailing)
                     }
                 }

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        HomeFeedView(viewModel: DessertViewModel(networkService: NetworkService()), dessertDetails: DetailsViewModel(networkService: NetworkService()))
+        HomeFeedView(viewModel: RecipeViewModel(networkService: NetworkService()), recipeDetails: DetailsViewModel(networkService: NetworkService()))
     }
 }
 
