@@ -1,0 +1,9 @@
+{
+    "meals": [
+        {
+            "strMeal": "Christmas cake",
+            "strMealThumb": "https://www.themealdb.com/images/media/meals/ldnrm91576791881.jpg",
+            "idMeal": "52990"
+        },
+    ],
+}

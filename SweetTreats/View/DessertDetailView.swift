@@ -22,7 +22,6 @@ struct DessertDetailView: View {
     }
 }
 
-
 struct DessertImagesView: View {
     @ObservedObject var dessertDetails: DetailsViewModel
     
