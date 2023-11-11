@@ -25,7 +25,7 @@
 		213DA4772AF9DC3600C2317D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 213DA4762AF9DC3600C2317D /* Assets.xcassets */; };
 		213DA47A2AF9DC3600C2317D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 213DA4792AF9DC3600C2317D /* Preview Assets.xcassets */; };
 		213DA4812AF9DE1E00C2317D /* AllDessertsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213DA4802AF9DE1E00C2317D /* AllDessertsView.swift */; };
-		213DA4882AF9EED700C2317D /* DessertCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213DA4872AF9EED700C2317D /* DessertCardView.swift */; };
+		213DA4882AF9EED700C2317D /* RecipeCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213DA4872AF9EED700C2317D /* RecipeCardView.swift */; };
 		213DA48F2AFAE3EF00C2317D /* DessertModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213DA48E2AFAE3EF00C2317D /* DessertModel.swift */; };
 		213DA4912AFAE95600C2317D /* DessertDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213DA4902AFAE95600C2317D /* DessertDetailView.swift */; };
 		213DA4982AFC6C0100C2317D /* DetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213DA4972AFC6C0100C2317D /* DetailsModel.swift */; };
@@ -61,7 +61,7 @@
 		213DA4762AF9DC3600C2317D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		213DA4792AF9DC3600C2317D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		213DA4802AF9DE1E00C2317D /* AllDessertsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllDessertsView.swift; sourceTree = "<group>"; };
-		213DA4872AF9EED700C2317D /* DessertCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DessertCardView.swift; sourceTree = "<group>"; };
+		213DA4872AF9EED700C2317D /* RecipeCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCardView.swift; sourceTree = "<group>"; };
 		213DA48E2AFAE3EF00C2317D /* DessertModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DessertModel.swift; sourceTree = "<group>"; };
 		213DA4902AFAE95600C2317D /* DessertDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DessertDetailView.swift; sourceTree = "<group>"; };
 		213DA4972AFC6C0100C2317D /* DetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsModel.swift; sourceTree = "<group>"; };
@@ -189,7 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				211AC1A72AFF4B83006FC662 /* Desserts */,
-				213DA4872AF9EED700C2317D /* DessertCardView.swift */,
+				213DA4872AF9EED700C2317D /* RecipeCardView.swift */,
 				211AC1A32AFF47F8006FC662 /* AllCategoriesChipsView.swift */,
 				211AC1A52AFF4B7D006FC662 /* HomeFeedView.swift */,
 			);
@@ -325,7 +325,7 @@
 				213DA48F2AFAE3EF00C2317D /* DessertModel.swift in Sources */,
 				213DA4912AFAE95600C2317D /* DessertDetailView.swift in Sources */,
 				213DA4752AF9DC3500C2317D /* ContentView.swift in Sources */,
-				213DA4882AF9EED700C2317D /* DessertCardView.swift in Sources */,
+				213DA4882AF9EED700C2317D /* RecipeCardView.swift in Sources */,
 				213DA4982AFC6C0100C2317D /* DetailsModel.swift in Sources */,
 				213DA4812AF9DE1E00C2317D /* AllDessertsView.swift in Sources */,
 				213DA4732AF9DC3500C2317D /* SweetTreatsApp.swift in Sources */,

@@ -18,14 +18,14 @@ struct HomeFeedView: View {
 
             List(viewModel.desserts, id: \.idMeal) { dessert in
                 NavigationLink(destination: DessertDetailView(originalDessert: dessert, dessertDetails: dessertDetails)) {
-                    DessertCardView(dessert: dessert)
+                    RecipeCardView(dessert: dessert)
                 }
                 .listRowBackground(Color.clear)
                 .listRowSeparator(.hidden)
                 .padding(.bottom, -10)
             }
             .listStyle(.plain)
-            .navigationTitle("All Desserts")
+            .navigationTitle("Discover")
             .onAppear {
                 viewModel.fetch()
             }
