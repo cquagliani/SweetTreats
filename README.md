@@ -1,10 +1,11 @@
 # SweetTreats
 
-SweetTreats is a native iOS app developed in SwiftUI, designed to allow users to browse dessert recipes sourced from TheMealDB.
+SweetTreats is a native iOS app developed in SwiftUI, designed to allow users to browse recipes sourced from TheMealDB.
 
 ## Features
 
-- Displays a list of dessert recipes sourced from TheMealDB sorted alphabetically
+- Displays an alphabetically sorted list of recipes sourced from TheMealDB
+- Choose from 14 different recipe categories
 - View recipe details including ingredients with measurements, and instructions
 - User-friendly interface
 
