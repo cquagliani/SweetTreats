@@ -17,3 +17,6 @@ SweetTreats is a native iOS app developed in SwiftUI, designed to allow users to
 - Build and run the application in the simulator or on your device:
   - Select your target device from the dropdown in Xcode.
   - Press `Cmd + R` to build and run the application.
+    
+## Demo
+![Simulator Screen Recording - iPhone 15 Pro - 2023-11-12 at 14 19 22](https://github.com/cquagliani/SweetTreats/assets/69338979/abb3adce-b235-448b-8a44-43aa2c2e2744)
