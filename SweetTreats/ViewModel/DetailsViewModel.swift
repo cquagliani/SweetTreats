@@ -8,7 +8,7 @@
 import SwiftUI
 
 class DetailsViewModel: ObservableObject {
-    @Published var dessertDetails: [DessertDetail] = []
+    @Published var recipeDetails: [RecipeDetails] = []
     var error: Error?
 
     private let networkService: NetworkServiceProtocol
@@ -29,7 +29,7 @@ class DetailsViewModel: ObservableObject {
                 } else if let data = data {
                     do {
                         let response = try JSONDecoder().decode(DetailResponse.self, from: data)
-                        self?.dessertDetails = response.meals
+                        self?.recipeDetails = response.meals
                     } catch {
                         self?.error = error
                     }
