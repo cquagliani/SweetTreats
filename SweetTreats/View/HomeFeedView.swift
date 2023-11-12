@@ -15,19 +15,20 @@ struct HomeFeedView: View {
 
     var body: some View {
         NavigationStack {
-            AllCategoriesChipsView(selectedCategory: $selectedCategory)
+            CategoryChipsView(selectedCategory: $selectedCategory)
                 .padding(.top, 15)
 
             List(viewModel.recipes, id: \.idMeal) { recipe in
                 NavigationLink(destination: RecipeDetailView(originalRecipe: recipe, recipeDetails: recipeDetails)) {
                     RecipeCardView(recipe: recipe)
                 }
-                .listRowBackground(Color.clear)
                 .listRowSeparator(.hidden)
                 .padding(.bottom, -10)
+                
             }
             .listStyle(.plain)
             .navigationTitle("Discover")
+            
             .onAppear {
                 viewModel.fetch(strCategory: selectedCategory)
             }
@@ -37,8 +38,6 @@ struct HomeFeedView: View {
         }
     }
 }
-
-//    .onAppear {recipeDetails.fetch(idMeal: originalDessert.idMeal)}
 
 struct HomeFeedView_Previews: PreviewProvider {
     static var previews: some View {

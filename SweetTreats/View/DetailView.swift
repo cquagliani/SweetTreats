@@ -40,14 +40,16 @@ struct RecipeNameCategory: View {
     var body: some View {
         VStack {
             ForEach(recipeDetails.recipeDetails, id:\.idMeal) { recipe in
-                Text(recipe.strMeal.capitalized)
-                    .font(.title.weight(.bold))
-                    .frame(maxWidth: .infinity, alignment: .topLeading)
-                    .padding(.bottom, 2)
-                
-                Text(recipe.strCategory)
-                    .font(.system(size: 16, weight: .regular))
-                    .frame(maxWidth: .infinity, alignment: .leading)
+                VStack {
+                    Text(recipe.strMeal.capitalized)
+                        .font(.title.weight(.bold))
+                        .frame(maxWidth: .infinity, alignment: .topLeading)
+                        .padding(.bottom, 2)
+                    
+                    Text(recipe.strCategory)
+                        .font(.system(size: 16, weight: .regular))
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                }
             }
             .padding(.horizontal)
             

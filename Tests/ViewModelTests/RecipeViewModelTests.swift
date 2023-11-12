@@ -1,6 +1,6 @@
 //
-//  AllDessertsViewModelTests.swift
-//  AllDessertsViewTests
+//  AllRecipesViewModelTests.swift
+//  AllRecipesViewTests
 //
 //  Created by Chris Quagliani on 11/10/23.
 //
@@ -8,15 +8,15 @@
 import XCTest
 @testable import SweetTreats
 
-class DessertViewModelTests: XCTestCase {
+class RecipeViewModelTests: XCTestCase {
     
-    var viewModel: DessertViewModel!
+    var viewModel: RecipeViewModel!
     var mockNetworkService: MockNetworkService!
 
     override func setUp() {
         super.setUp()
         mockNetworkService = MockNetworkService()
-        viewModel = DessertViewModel(networkService: mockNetworkService)
+        viewModel = RecipeViewModel(networkService: mockNetworkService)
     }
 
     override func tearDown() {
@@ -25,12 +25,12 @@ class DessertViewModelTests: XCTestCase {
         super.tearDown()
     }
 
-    func testFetchDessertsSuccess() {
-        let expectation = self.expectation(description: "Fetch desserts")
+    func testFetchRecipesSuccess() {
+        let expectation = self.expectation(description: "Fetch Recipes")
 
         mockNetworkService.shouldReturnError = false
 
-        viewModel.fetch()
+        viewModel.fetch(strCategory: "Desserts")
 
         DispatchQueue.main.async {
             expectation.fulfill()
@@ -38,15 +38,15 @@ class DessertViewModelTests: XCTestCase {
 
         waitForExpectations(timeout: 1)
 
-        XCTAssertEqual(viewModel.desserts.count, 1)
+        XCTAssertEqual(viewModel.recipes.count, 1)
     }
 
-    func testFetchDessertsFailure() {
-        let expectation = self.expectation(description: "Fetch desserts with error")
+    func testFetchRecipesFailure() {
+        let expectation = self.expectation(description: "Fetch Recipes with error")
 
         mockNetworkService.shouldReturnError = true
 
-        viewModel.fetch()
+        viewModel.fetch(strCategory: "Dessert")
 
         DispatchQueue.main.async {
             expectation.fulfill()

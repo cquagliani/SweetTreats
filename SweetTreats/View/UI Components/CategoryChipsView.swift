@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct AllCategoriesChipsView: View {
+struct CategoryChipsView: View {
     @State private var selectedButton: Int?
     @Binding var selectedCategory: String
     

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct RecipeCardView: View {
+struct RecipeCardView: View {    
     let recipe: Recipe
     let corner = 10.0 // Controls corner radius of all elements in the ZStack
     let shadow = 10.0 // Controls shadow radius of all elements in the ZStack
@@ -33,6 +33,7 @@ struct RecipeCardView: View {
                     .foregroundColor(.white)
                     .padding(.leading)
                     .frame(maxWidth: .infinity, alignment: .leading)
+                
             }
         }
         .cornerRadius(corner)
